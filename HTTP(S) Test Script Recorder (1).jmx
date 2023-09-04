@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">www.example.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="scheme" elementType="Argument">
+            <stringProp name="Argument.name">scheme</stringProp>
+            <stringProp name="Argument.value">https</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">www.example.com</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Ckyc_Outbound" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;ckycsearch_req&quot;: {&#xd;
+        &quot;Body&quot;: {&#xd;
+            &quot;Payload&quot;: {&#xd;
+                &quot;idtype&quot;: &quot;Z&quot;,&#xd;
+                &quot;idno&quot;: &quot;30074996771727&quot;&#xd;
+            }&#xd;
+        }&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test-intgateway.ib.in</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/uat-indian-bankapi/enterprise/v1/ckycsearch</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-IB-Client-Secret" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Secret</stringProp>
+                <stringProp name="Header.value">4a983adbcea8fde594da695a1df8a1ff</stringProp>
+              </elementProp>
+              <elementProp name="Postman-Token" elementType="Header">
+                <stringProp name="Header.name">Postman-Token</stringProp>
+                <stringProp name="Header.value">b7e3b56d-ea9a-4221-8eec-4cc7a5d8c1a8</stringProp>
+              </elementProp>
+              <elementProp name="X-Client-Certificate" elementType="Header">
+                <stringProp name="Header.name">X-Client-Certificate</stringProp>
+                <stringProp name="Header.value">MIIDgzCCAmugAwIBAgIQGYkeNFvTOgC1j6kkGvZkLjANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwppbmdyZXNzLWNhMB4XDTIyMDEyNDE3MTMxMVoXDTIzMDcwODE3MTMxMVowRTFDMEEGA1UEAxM6YXBpY29ubmVjdC02NjY5MjViNS1nYXRld2F5LW1hbmFnZXItYXBpYy5hcHBzLnVhdG9jcC5pYi5pbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK0ScerbY6CQ1zZmk9PmJJIRkZCU06F4CE6UX/GEMSLdeZEK/t5WljEl+mv2BIrlu6N6hFTjeKJ9LUqgVeliGHchw8dIRVbn6slLJeM7agSZnwVMfEoPcgxW8GrMbbB6sLYrpjrwzuGOrnGmNTKds5iJEN3yeU179nbHrwP0+sqaajhAA2YHu+QaXQ3r1dXUNZCjXcdQ9PIIyxWX4TaHXtNUXXY8Wz10odKnuwOQrrsHR8YU3ZWYFjiGS5x6lhWaRlZ3iPJYpqSQm/7cNTo3SHvEt2xOszGsyVRWHAL0sM5pnZ0R09stvuW+yGZFFrsW0B9F7C91OS2zIzZ3gJSyyRMCAwEAAaOBnjCBmzAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBTU3SvfEL+oe+eGMZYlwqymmGL1ADBFBgNVHREEPjA8gjphcGljb25uZWN0LTY2NjkyNWI1LWdhdGV3YXktbWFuYWdlci1hcGljLmFwcHMudWF0b2NwLmliLmluMA0GCSqGSIb3DQEBCwUAA4IBAQA+b60otUxPH4kmMXWS/NMFPaS+VTlmS90vJoaTl48Cs0OQs7nSoMrdHgi4uA3lLQYxP9cuz3JyDdlx8k4GSj6xkU6FGKlRtd1bJat2STWkQ+ABTEeNmcofp72rEsGYZo/9vjmca+NSI3z0rkPgJEFGmQWl66/tZwcqYKnzlXQ803+8ii5M9K39Ph7m01P3XPgTLMf8CEsgNUBDd+N2Us5OyBO6AG2+xhZcYtuMANmgYsBp11p9kSgC1eEmpdjxVq5M/fgmT8suJaKk++bqIR+jBZQG+oLg+izsLmLb18fmUDV9agZ/DSVpqNVcptuuAieC7Drk1C0DyzUjFCbYIL8f</stringProp>
+              </elementProp>
+              <elementProp name="Channel" elementType="Header">
+                <stringProp name="Header.name">Channel</stringProp>
+                <stringProp name="Header.value">INBNK</stringProp>
+              </elementProp>
+              <elementProp name="X-API-Interaction-ID" elementType="Header">
+                <stringProp name="Header.name">X-API-Interaction-ID</stringProp>
+                <stringProp name="Header.value">DQUM169276600985440466${__Random(1000,10000)}</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="X-IB-Client-Id" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Id</stringProp>
+                <stringProp name="Header.value">a25a44f80b85ec6501deb2d6cef53e77</stringProp>
+              </elementProp>
+              <elementProp name="HealthCheck" elementType="Header">
+                <stringProp name="Header.name">HealthCheck</stringProp>
+                <stringProp name="Header.value">False</stringProp>
+              </elementProp>
+              <elementProp name="HealthType" elementType="Header">
+                <stringProp name="Header.name">HealthType</stringProp>
+                <stringProp name="Header.value">ALL</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.28.4</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OutboundGSTN" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test-intgateway.ib.in</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/uat-indian-bankapi/enterprise/v1/getgstn</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-IB-Client-Secret" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Secret</stringProp>
+                <stringProp name="Header.value">4a983adbcea8fde594da695a1df8a1ff</stringProp>
+              </elementProp>
+              <elementProp name="Postman-Token" elementType="Header">
+                <stringProp name="Header.name">Postman-Token</stringProp>
+                <stringProp name="Header.value">2c838b7b-c489-48f8-a6aa-29567b45808a</stringProp>
+              </elementProp>
+              <elementProp name="X-Client-Certificate" elementType="Header">
+                <stringProp name="Header.name">X-Client-Certificate</stringProp>
+                <stringProp name="Header.value">MIIDgzCCAmugAwIBAgIQGYkeNFvTOgC1j6kkGvZkLjANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwppbmdyZXNzLWNhMB4XDTIyMDEyNDE3MTMxMVoXDTIzMDcwODE3MTMxMVowRTFDMEEGA1UEAxM6YXBpY29ubmVjdC02NjY5MjViNS1nYXRld2F5LW1hbmFnZXItYXBpYy5hcHBzLnVhdG9jcC5pYi5pbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK0ScerbY6CQ1zZmk9PmJJIRkZCU06F4CE6UX/GEMSLdeZEK/t5WljEl+mv2BIrlu6N6hFTjeKJ9LUqgVeliGHchw8dIRVbn6slLJeM7agSZnwVMfEoPcgxW8GrMbbB6sLYrpjrwzuGOrnGmNTKds5iJEN3yeU179nbHrwP0+sqaajhAA2YHu+QaXQ3r1dXUNZCjXcdQ9PIIyxWX4TaHXtNUXXY8Wz10odKnuwOQrrsHR8YU3ZWYFjiGS5x6lhWaRlZ3iPJYpqSQm/7cNTo3SHvEt2xOszGsyVRWHAL0sM5pnZ0R09stvuW+yGZFFrsW0B9F7C91OS2zIzZ3gJSyyRMCAwEAAaOBnjCBmzAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBTU3SvfEL+oe+eGMZYlwqymmGL1ADBFBgNVHREEPjA8gjphcGljb25uZWN0LTY2NjkyNWI1LWdhdGV3YXktbWFuYWdlci1hcGljLmFwcHMudWF0b2NwLmliLmluMA0GCSqGSIb3DQEBCwUAA4IBAQA+b60otUxPH4kmMXWS/NMFPaS+VTlmS90vJoaTl48Cs0OQs7nSoMrdHgi4uA3lLQYxP9cuz3JyDdlx8k4GSj6xkU6FGKlRtd1bJat2STWkQ+ABTEeNmcofp72rEsGYZo/9vjmca+NSI3z0rkPgJEFGmQWl66/tZwcqYKnzlXQ803+8ii5M9K39Ph7m01P3XPgTLMf8CEsgNUBDd+N2Us5OyBO6AG2+xhZcYtuMANmgYsBp11p9kSgC1eEmpdjxVq5M/fgmT8suJaKk++bqIR+jBZQG+oLg+izsLmLb18fmUDV9agZ/DSVpqNVcptuuAieC7Drk1C0DyzUjFCbYIL8f</stringProp>
+              </elementProp>
+              <elementProp name="Channel" elementType="Header">
+                <stringProp name="Header.name">Channel</stringProp>
+                <stringProp name="Header.value">GSTN</stringProp>
+              </elementProp>
+              <elementProp name="X-API-Interaction-ID" elementType="Header">
+                <stringProp name="Header.name">X-API-Interaction-ID</stringProp>
+                <stringProp name="Header.value">GSTN564738292956473857${__Random(1000,10000)}</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="X-IB-Client-Id" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Id</stringProp>
+                <stringProp name="Header.value">a25a44f80b85ec6501deb2d6cef53e77</stringProp>
+              </elementProp>
+              <elementProp name="HealthCheck" elementType="Header">
+                <stringProp name="Header.name">HealthCheck</stringProp>
+                <stringProp name="Header.value">FALSE</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="GSTINID" elementType="Header">
+                <stringProp name="Header.name">GSTINID</stringProp>
+                <stringProp name="Header.value">18AWNPB3410A3Z5</stringProp>
+              </elementProp>
+              <elementProp name="HealthType" elementType="Header">
+                <stringProp name="Header.name">HealthType</stringProp>
+                <stringProp name="Header.value">ALL</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.28.4</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="validated otp_SBI" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;SBILifeInsuranceValidateOTP_Req&quot;: {&#xd;
+        &quot;Body&quot;: {&#xd;
+            &quot;Payload&quot;: {&#xd;
+                &quot;otp&quot;: &quot;226036&quot;,&#xd;
+                &quot;transId&quot;: &quot;10304&quot;&#xd;
+            }&#xd;
+        }&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test-intgateway.ib.in</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/uat-indian-bankapi/enterprise/sbi/v1/validateotp</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-IB-Client-Secret" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Secret</stringProp>
+                <stringProp name="Header.value">4a983adbcea8fde594da695a1df8a1ff</stringProp>
+              </elementProp>
+              <elementProp name="Postman-Token" elementType="Header">
+                <stringProp name="Header.name">Postman-Token</stringProp>
+                <stringProp name="Header.value">1eeacf19-7bf4-48d4-a27d-bd253069fd78</stringProp>
+              </elementProp>
+              <elementProp name="X-Client-Certificate" elementType="Header">
+                <stringProp name="Header.name">X-Client-Certificate</stringProp>
+                <stringProp name="Header.value">MIIDgzCCAmugAwIBAgIQGYkeNFvTOgC1j6kkGvZkLjANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwppbmdyZXNzLWNhMB4XDTIyMDEyNDE3MTMxMVoXDTIzMDcwODE3MTMxMVowRTFDMEEGA1UEAxM6YXBpY29ubmVjdC02NjY5MjViNS1nYXRld2F5LW1hbmFnZXItYXBpYy5hcHBzLnVhdG9jcC5pYi5pbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK0ScerbY6CQ1zZmk9PmJJIRkZCU06F4CE6UX/GEMSLdeZEK/t5WljEl+mv2BIrlu6N6hFTjeKJ9LUqgVeliGHchw8dIRVbn6slLJeM7agSZnwVMfEoPcgxW8GrMbbB6sLYrpjrwzuGOrnGmNTKds5iJEN3yeU179nbHrwP0+sqaajhAA2YHu+QaXQ3r1dXUNZCjXcdQ9PIIyxWX4TaHXtNUXXY8Wz10odKnuwOQrrsHR8YU3ZWYFjiGS5x6lhWaRlZ3iPJYpqSQm/7cNTo3SHvEt2xOszGsyVRWHAL0sM5pnZ0R09stvuW+yGZFFrsW0B9F7C91OS2zIzZ3gJSyyRMCAwEAAaOBnjCBmzAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBTU3SvfEL+oe+eGMZYlwqymmGL1ADBFBgNVHREEPjA8gjphcGljb25uZWN0LTY2NjkyNWI1LWdhdGV3YXktbWFuYWdlci1hcGljLmFwcHMudWF0b2NwLmliLmluMA0GCSqGSIb3DQEBCwUAA4IBAQA+b60otUxPH4kmMXWS/NMFPaS+VTlmS90vJoaTl48Cs0OQs7nSoMrdHgi4uA3lLQYxP9cuz3JyDdlx8k4GSj6xkU6FGKlRtd1bJat2STWkQ+ABTEeNmcofp72rEsGYZo/9vjmca+NSI3z0rkPgJEFGmQWl66/tZwcqYKnzlXQ803+8ii5M9K39Ph7m01P3XPgTLMf8CEsgNUBDd+N2Us5OyBO6AG2+xhZcYtuMANmgYsBp11p9kSgC1eEmpdjxVq5M/fgmT8suJaKk++bqIR+jBZQG+oLg+izsLmLb18fmUDV9agZ/DSVpqNVcptuuAieC7Drk1C0DyzUjFCbYIL8f</stringProp>
+              </elementProp>
+              <elementProp name="Channel" elementType="Header">
+                <stringProp name="Header.name">Channel</stringProp>
+                <stringProp name="Header.value">INBNK</stringProp>
+              </elementProp>
+              <elementProp name="X-API-Interaction-ID" elementType="Header">
+                <stringProp name="Header.name">X-API-Interaction-ID</stringProp>
+                <stringProp name="Header.value">VOTE998809876545454545${__Random(1000,10000)}</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="X-IB-Client-Id" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Id</stringProp>
+                <stringProp name="Header.value">a25a44f80b85ec6501deb2d6cef53e77</stringProp>
+              </elementProp>
+              <elementProp name="HealthCheck" elementType="Header">
+                <stringProp name="Header.name">HealthCheck</stringProp>
+                <stringProp name="Header.value">False</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="HealthType" elementType="Header">
+                <stringProp name="Header.name">HealthType</stringProp>
+                <stringProp name="Header.value">ALL</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.28.4</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Scoreme_Pandetailsinfo" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;kycpandetailinfo_req&quot;: {&#xd;
+        &quot;Body&quot;: {&#xd;
+            &quot;Payload&quot;: {&#xd;
+                &quot;pan&quot;:&quot;AHBPG9088L&quot;&#xd;
+            }&#xd;
+        }&#xd;
+    }&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">test-intgateway.ib.in</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/uat-indian-bankapi/enterprise/v1/pandetailinfo</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-IB-Client-Secret" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Secret</stringProp>
+                <stringProp name="Header.value">4a983adbcea8fde594da695a1df8a1ff</stringProp>
+              </elementProp>
+              <elementProp name="Postman-Token" elementType="Header">
+                <stringProp name="Header.name">Postman-Token</stringProp>
+                <stringProp name="Header.value">ebb86fbc-185e-44b4-a33d-48565fc3166e</stringProp>
+              </elementProp>
+              <elementProp name="X-Client-Certificate" elementType="Header">
+                <stringProp name="Header.name">X-Client-Certificate</stringProp>
+                <stringProp name="Header.value">MIIDgzCCAmugAwIBAgIQGYkeNFvTOgC1j6kkGvZkLjANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwppbmdyZXNzLWNhMB4XDTIyMDEyNDE3MTMxMVoXDTIzMDcwODE3MTMxMVowRTFDMEEGA1UEAxM6YXBpY29ubmVjdC02NjY5MjViNS1nYXRld2F5LW1hbmFnZXItYXBpYy5hcHBzLnVhdG9jcC5pYi5pbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK0ScerbY6CQ1zZmk9PmJJIRkZCU06F4CE6UX/GEMSLdeZEK/t5WljEl+mv2BIrlu6N6hFTjeKJ9LUqgVeliGHchw8dIRVbn6slLJeM7agSZnwVMfEoPcgxW8GrMbbB6sLYrpjrwzuGOrnGmNTKds5iJEN3yeU179nbHrwP0+sqaajhAA2YHu+QaXQ3r1dXUNZCjXcdQ9PIIyxWX4TaHXtNUXXY8Wz10odKnuwOQrrsHR8YU3ZWYFjiGS5x6lhWaRlZ3iPJYpqSQm/7cNTo3SHvEt2xOszGsyVRWHAL0sM5pnZ0R09stvuW+yGZFFrsW0B9F7C91OS2zIzZ3gJSyyRMCAwEAAaOBnjCBmzAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBTU3SvfEL+oe+eGMZYlwqymmGL1ADBFBgNVHREEPjA8gjphcGljb25uZWN0LTY2NjkyNWI1LWdhdGV3YXktbWFuYWdlci1hcGljLmFwcHMudWF0b2NwLmliLmluMA0GCSqGSIb3DQEBCwUAA4IBAQA+b60otUxPH4kmMXWS/NMFPaS+VTlmS90vJoaTl48Cs0OQs7nSoMrdHgi4uA3lLQYxP9cuz3JyDdlx8k4GSj6xkU6FGKlRtd1bJat2STWkQ+ABTEeNmcofp72rEsGYZo/9vjmca+NSI3z0rkPgJEFGmQWl66/tZwcqYKnzlXQ803+8ii5M9K39Ph7m01P3XPgTLMf8CEsgNUBDd+N2Us5OyBO6AG2+xhZcYtuMANmgYsBp11p9kSgC1eEmpdjxVq5M/fgmT8suJaKk++bqIR+jBZQG+oLg+izsLmLb18fmUDV9agZ/DSVpqNVcptuuAieC7Drk1C0DyzUjFCbYIL8f</stringProp>
+              </elementProp>
+              <elementProp name="Channel" elementType="Header">
+                <stringProp name="Header.name">Channel</stringProp>
+                <stringProp name="Header.value">INBNK</stringProp>
+              </elementProp>
+              <elementProp name="X-API-Interaction-ID" elementType="Header">
+                <stringProp name="Header.name">X-API-Interaction-ID</stringProp>
+                <stringProp name="Header.value">AAAA661022023415008800${__Random(1000,10000)}</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="X-IB-Client-Id" elementType="Header">
+                <stringProp name="Header.name">X-IB-Client-Id</stringProp>
+                <stringProp name="Header.value">a25a44f80b85ec6501deb2d6cef53e77</stringProp>
+              </elementProp>
+              <elementProp name="HealthCheck" elementType="Header">
+                <stringProp name="Header.name">HealthCheck</stringProp>
+                <stringProp name="Header.value">false</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="HealthType" elementType="Header">
+                <stringProp name="Header.name">HealthType</stringProp>
+                <stringProp name="Header.value">all</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.28.4</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
